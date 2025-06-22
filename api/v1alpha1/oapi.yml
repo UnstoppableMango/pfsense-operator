@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json
+package: v1alpha1
+output: zz_generated.models.go
+output-options:
+  include-tags:
+    - FIREWALL
+  exclude-schemas:
+    - FirewallRule
+generate:
+  models: true

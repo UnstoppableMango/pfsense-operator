@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- pfsense_v1alpha1_firewallrule.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v4
 projectName: pfsense-operator
 repo: github.com/unstoppablemango/pfsense-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: unmango.dev
+  group: pfsense
+  kind: FirewallRule
+  path: github.com/unstoppablemango/pfsense-operator/api/v1alpha1
+  version: v1alpha1
 version: "3"

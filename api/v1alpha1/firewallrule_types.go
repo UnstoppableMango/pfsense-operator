@@ -17,14 +17,17 @@ limitations under the License.
 package v1alpha1
 
 import (
+	"github.com/unstoppablemango/pfsense-operator/api/v1alpha1/models"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 //go:generate go tool oapi-codegen -config oapi.yml ../../schemas/openapi.yml
 
+type RuleModel models.FirewallRule
+
 // FirewallRuleSpec defines the desired state of FirewallRule.
 type FirewallRuleSpec struct {
-	// Rule models.FirewallRule `json:"rule"`
+	Rule RuleModel `json:"rule"`
 }
 
 // FirewallRuleStatus defines the observed state of FirewallRule.

@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json
-package: v1alpha1
+package: models
 output: models/zz_generated.go
 output-options:
   include-tags:

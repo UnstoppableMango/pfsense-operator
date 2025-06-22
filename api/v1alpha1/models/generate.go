@@ -1,3 +1,3 @@
 package models
 
-//go:generate go tool oapi-codegen -config firewall_rule.oapi.yml ../../../schemas/openapi.yml
+//go:generate go tool oapi-codegen -config firewallrule.oapi.yml ../../../schemas/openapi.yml

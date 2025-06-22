@@ -6,6 +6,7 @@
 *.dylib
 bin/*
 Dockerfile.cross
+*.iso
 
 # Test binary, built with `go test -c`
 *.test
@@ -25,3 +26,6 @@ go.work
 *.swp
 *.swo
 *~
+
+# Pulumi stack configuration files for pfSense VMs
+Pulumi.*.yaml

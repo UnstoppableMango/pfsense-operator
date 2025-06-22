@@ -1,0 +1,14 @@
+name: pfsense-operator
+description: pfSense testing instance
+runtime: go
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: go
+  libvirt:uri: qemu:///system
+packages:
+  libvirt:
+    source: terraform-provider
+    version: 0.11.0
+    parameters:
+      - dmacvicar/libvirt

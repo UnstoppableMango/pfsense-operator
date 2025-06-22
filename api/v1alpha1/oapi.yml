@@ -1,10 +1,100 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json
 package: v1alpha1
-output: zz_generated.models.go
+output: models/zz_generated.go
 output-options:
   include-tags:
     - FIREWALL
-  exclude-schemas:
-    - FirewallRule
+  exclude-operation-ids:
+    - getFirewallAdvancedSettingsEndpoint
+    - patchFirewallAdvancedSettingsEndpoint
+    - getFirewallAliasEndpoint
+    - postFirewallAliasEndpoint
+    - patchFirewallAliasEndpoint
+    - deleteFirewallAliasEndpoint
+    - getFirewallAliasesEndpoint
+    - putFirewallAliasesEndpoint
+    - deleteFirewallAliasesEndpoint
+    - getFirewallApplyEndpoint
+    - postFirewallApplyEndpoint
+    - getFirewallNATOneToOneMappingEndpoint
+    - postFirewallNATOneToOneMappingEndpoint
+    - patchFirewallNATOneToOneMappingEndpoint
+    - deleteFirewallNATOneToOneMappingEndpoint
+    - getFirewallNATOneToOneMappingsEndpoint
+    - putFirewallNATOneToOneMappingsEndpoint
+    - deleteFirewallNATOneToOneMappingsEndpoint
+    - getFirewallNATOutboundMappingEndpoint
+    - postFirewallNATOutboundMappingEndpoint
+    - patchFirewallNATOutboundMappingEndpoint
+    - deleteFirewallNATOutboundMappingEndpoint
+    - getFirewallNATOutboundMappingsEndpoint
+    - putFirewallNATOutboundMappingsEndpoint
+    - deleteFirewallNATOutboundMappingsEndpoint
+    - getFirewallNATOutboundModeEndpoint
+    - patchFirewallNATOutboundModeEndpoint
+    - getFirewallNATPortForwardEndpoint
+    - postFirewallNATPortForwardEndpoint
+    - patchFirewallNATPortForwardEndpoint
+    - deleteFirewallNATPortForwardEndpoint
+    - getFirewallNATPortForwardsEndpoint
+    - putFirewallNATPortForwardsEndpoint
+    - deleteFirewallNATPortForwardsEndpoint
+    # - getFirewallRuleEndpoint
+    - postFirewallRuleEndpoint
+    - patchFirewallRuleEndpoint
+    - deleteFirewallRuleEndpoint
+    - getFirewallRulesEndpoint
+    - putFirewallRulesEndpoint
+    - deleteFirewallRulesEndpoint
+    - getFirewallScheduleEndpoint
+    - postFirewallScheduleEndpoint
+    - patchFirewallScheduleEndpoint
+    - deleteFirewallScheduleEndpoint
+    - getFirewallScheduleTimeRangeEndpoint
+    - postFirewallScheduleTimeRangeEndpoint
+    - patchFirewallScheduleTimeRangeEndpoint
+    - deleteFirewallScheduleTimeRangeEndpoint
+    - getFirewallSchedulesEndpoint
+    - putFirewallSchedulesEndpoint
+    - deleteFirewallSchedulesEndpoint
+    - getFirewallStateEndpoint
+    - deleteFirewallStateEndpoint
+    - getFirewallStatesEndpoint
+    - deleteFirewallStatesEndpoint
+    - getFirewallStatesSizeEndpoint
+    - patchFirewallStatesSizeEndpoint
+    - getFirewallTrafficShaperEndpoint
+    - postFirewallTrafficShaperEndpoint
+    - patchFirewallTrafficShaperEndpoint
+    - deleteFirewallTrafficShaperEndpoint
+    - getFirewallTrafficShaperLimiterBandwidthEndpoint
+    - postFirewallTrafficShaperLimiterBandwidthEndpoint
+    - patchFirewallTrafficShaperLimiterBandwidthEndpoint
+    - deleteFirewallTrafficShaperLimiterBandwidthEndpoint
+    - getFirewallTrafficShaperLimiterEndpoint
+    - postFirewallTrafficShaperLimiterEndpoint
+    - patchFirewallTrafficShaperLimiterEndpoint
+    - deleteFirewallTrafficShaperLimiterEndpoint
+    - getFirewallTrafficShaperLimiterQueueEndpoint
+    - postFirewallTrafficShaperLimiterQueueEndpoint
+    - patchFirewallTrafficShaperLimiterQueueEndpoint
+    - deleteFirewallTrafficShaperLimiterQueueEndpoint
+    - getFirewallTrafficShaperLimitersEndpoint
+    - putFirewallTrafficShaperLimitersEndpoint
+    - getFirewallTrafficShaperQueueEndpoint
+    - postFirewallTrafficShaperQueueEndpoint
+    - patchFirewallTrafficShaperQueueEndpoint
+    - deleteFirewallTrafficShaperQueueEndpoint
+    - getFirewallTrafficShapersEndpoint
+    - putFirewallTrafficShapersEndpoint
+    - deleteFirewallTrafficShapersEndpoint
+    - getFirewallVirtualIPApplyEndpoint
+    - postFirewallVirtualIPApplyEndpoint
+    - getFirewallVirtualIPEndpoint
+    - postFirewallVirtualIPEndpoint
+    - patchFirewallVirtualIPEndpoint
+    - deleteFirewallVirtualIPEndpoint
+    - getFirewallVirtualIPsEndpoint
+    - deleteFirewallVirtualIPsEndpoint
 generate:
   models: true

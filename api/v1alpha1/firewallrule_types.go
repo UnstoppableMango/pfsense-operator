@@ -24,17 +24,11 @@ import (
 
 // FirewallRuleSpec defines the desired state of FirewallRule.
 type FirewallRuleSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of FirewallRule. Edit firewallrule_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Rule models.FirewallRule `json:"rule"`
 }
 
 // FirewallRuleStatus defines the observed state of FirewallRule.
 type FirewallRuleStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
 }
 
 // +kubebuilder:object:root=true

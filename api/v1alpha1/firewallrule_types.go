@@ -21,8 +21,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//go:generate go tool oapi-codegen -config oapi.yml ../../schemas/openapi.yml
-
 type RuleModel models.FirewallRule
 
 // FirewallRuleSpec defines the desired state of FirewallRule.
@@ -32,6 +30,7 @@ type FirewallRuleSpec struct {
 
 // FirewallRuleStatus defines the observed state of FirewallRule.
 type FirewallRuleStatus struct {
+	Rule RuleModel `json:"rule"`
 }
 
 // +kubebuilder:object:root=true

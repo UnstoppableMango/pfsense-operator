@@ -230,6 +230,195 @@ spec:
             type: object
           status:
             description: FirewallRuleStatus defines the observed state of FirewallRule.
+            properties:
+              rule:
+                description: FirewallRule defines model for FirewallRule.
+                properties:
+                  ackqueue:
+                    description: Ackqueue The name of the traffic shaper queue to
+                      assume as the ACK queue for ACK traffic matching this rule.<br>
+                    type: string
+                  associated_rule_id:
+                    description: AssociatedRuleId The internal rule ID for the NAT
+                      rule associated with this rule.<br>
+                    type: string
+                  created_by:
+                    description: CreatedBy The username and IP of the user who originally
+                      created this firewall rule.<br>
+                    type: string
+                  created_time:
+                    description: CreatedTime The unix timestamp of when this firewall
+                      rule was original created.<br>
+                    type: integer
+                  defaultqueue:
+                    description: Defaultqueue The name of the traffic shaper queue
+                      to assume as the default queue for traffic matching this rule.<br>
+                    type: string
+                  descr:
+                    description: Descr A description detailing the purpose or justification
+                      of this firewall rule.<br>
+                    type: string
+                  destination:
+                    description: 'Destination The destination address this rule applies
+                      to. Valid value options are: an existing interface, an IP address,
+                      a subnet CIDR, an existing alias, `any`, `(self)`, `l2tp`, `pppoe`.
+                      The context of this address can be inverted by prefixing the
+                      value with `!`. For interface values, the `:ip`  modifier can
+                      be appended to the value to use the interface''s IP address
+                      instead of its entire subnet.<br>'
+                    type: string
+                  destination_port:
+                    description: 'DestinationPort The destination port this rule applies
+                      to. Set to `null` to allow any destination port. Valid options
+                      are: a TCP/UDP port number, a TCP/UDP port range separated by
+                      `:`, an existing port type firewall alias<br><br>This field
+                      is only available when the following conditions are met:<br>-
+                      `protocol` must be one of [ tcp, udp, tcp/udp ]<br>'
+                    type: string
+                  direction:
+                    description: Direction The direction of traffic this firewall
+                      rule applies to. This field only applies to floating firewall
+                      rules.<br><br>This field is only available when the following
+                      conditions are met:<br>- `floating` must be equal to `true`<br>
+                    type: string
+                  disabled:
+                    description: Disabled Enable or disable this firewall rule.<br>
+                    type: boolean
+                  dnpipe:
+                    description: Dnpipe The name of the traffic shaper limiter pipe
+                      or queue to use for incoming traffic.<br>
+                    type: string
+                  floating:
+                    description: Floating Mark this rule as a floating firewall rule.<br>
+                    type: boolean
+                  gateway:
+                    description: Gateway The gateway traffic matching this rule will
+                      be routed to. Set to `null` to use default.<br>
+                    type: string
+                  icmptype:
+                    description: Icmptype Th ICMP subtypes this rule applies to. This
+                      field is only applicable when `ipprotocol` is `inet` and `protocol`
+                      is `icmp`.<br><br>This field is only available when the following
+                      conditions are met:<br>- `protocol` must be equal to `'icmp'`<br>
+                    items:
+                      description: FirewallRuleIcmptype defines model for FirewallRule.Icmptype.
+                      type: string
+                    type: array
+                  interface:
+                    description: Interface The interface where packets must originate
+                      to match this rule.<br>
+                    items:
+                      type: string
+                    type: array
+                  ipprotocol:
+                    description: Ipprotocol The IP version(s) this rule applies to.<br>
+                    type: string
+                  log:
+                    description: Log Enable or disable logging of traffic that matches
+                      this rule.<br>
+                    type: boolean
+                  pdnpipe:
+                    description: Pdnpipe The name of the traffic shaper limiter pipe
+                      or queue to use for outgoing traffic.<br>
+                    type: string
+                  protocol:
+                    description: Protocol The IP/transport protocol this rule should
+                      match.<br>
+                    type: string
+                  quick:
+                    description: Quick Apply this action to traffic that matches this
+                      rule immediately. This field only applies to floating firewall
+                      rules.<br><br>This field is only available when the following
+                      conditions are met:<br>- `floating` must be equal to `true`<br>
+                    type: boolean
+                  sched:
+                    description: Sched The name of an existing firewall schedule to
+                      assign to this firewall rule.<br>
+                    type: string
+                  source:
+                    description: 'Source The source address this rule applies to.
+                      Valid value options are: an existing interface, an IP address,
+                      a subnet CIDR, an existing alias, `any`, `(self)`, `l2tp`, `pppoe`.
+                      The context of this address can be inverted by prefixing the
+                      value with `!`. For interface values, the `:ip`  modifier can
+                      be appended to the value to use the interface''s IP address
+                      instead of its entire subnet.<br>'
+                    type: string
+                  source_port:
+                    description: 'SourcePort The source port this rule applies to.
+                      Set to `null` to allow any source port. Valid options are: a
+                      TCP/UDP port number, a TCP/UDP port range separated by `:`,
+                      an existing port type firewall alias<br><br>This field is only
+                      available when the following conditions are met:<br>- `protocol`
+                      must be one of [ tcp, udp, tcp/udp ]<br>'
+                    type: string
+                  statetype:
+                    description: Statetype The state mechanism to use for this firewall
+                      rule.<br>
+                    type: string
+                  tag:
+                    description: Tag A packet matching this rule can be marked and
+                      this mark used to match on other NAT/filter rules. It is called
+                      <br>
+                    type: string
+                  tcp_flags_any:
+                    description: TcpFlagsAny Allow any TCP flags.<br>
+                    type: boolean
+                  tcp_flags_out_of:
+                    description: TcpFlagsOutOf The TCP flags that can be set for this
+                      rule to match.<br><br>This field is only available when the
+                      following conditions are met:<br>- `tcp_flags_any` must be equal
+                      to `false`<br>
+                    items:
+                      description: FirewallRuleTcpFlagsOutOf defines model for FirewallRule.TcpFlagsOutOf.
+                      type: string
+                    type: array
+                  tcp_flags_set:
+                    description: TcpFlagsSet The TCP flags that must be set for this
+                      rule to match.<br><br>This field is only available when the
+                      following conditions are met:<br>- `tcp_flags_any` must be equal
+                      to `false`<br>
+                    items:
+                      description: FirewallRuleTcpFlagsSet defines model for FirewallRule.TcpFlagsSet.
+                      type: string
+                    type: array
+                  tracker:
+                    description: Tracker The internal tracking ID for this firewall
+                      rule.<br>
+                    type: integer
+                  type:
+                    description: Type The action to take against traffic that matches
+                      this rule.<br>
+                    type: string
+                  updated_by:
+                    description: UpdatedBy The username and IP of the user who last
+                      updated this firewall rule.<br>
+                    type: string
+                  updated_time:
+                    description: UpdatedTime The unix timestamp of when this firewall
+                      rule was original created.<br>
+                    type: integer
+                required:
+                - ackqueue
+                - associated_rule_id
+                - created_by
+                - created_time
+                - defaultqueue
+                - destination_port
+                - dnpipe
+                - gateway
+                - pdnpipe
+                - protocol
+                - sched
+                - source_port
+                - tcp_flags_out_of
+                - tcp_flags_set
+                - tracker
+                - updated_by
+                - updated_time
+                type: object
+            required:
+            - rule
             type: object
         type: object
     served: true

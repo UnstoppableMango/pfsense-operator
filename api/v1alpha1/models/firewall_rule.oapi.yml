@@ -1,9 +1,23 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json
 package: models
-output: models/zz_generated.go
+output: zz_generated.firewall_rule.go
 output-options:
   include-tags:
     - FIREWALL
+  exclude-schemas:
+    - FailedDependencyError
+    - ConflictError
+    - AuthenticationError
+    - ForbiddenError
+    - MediaTypeError
+    - MethodNotAllowedError
+    - NotAcceptableError
+    - NotFoundError
+    - ServerError
+    - ServiceUnavailableError
+    - Success
+    - UnprocessableContentError
+    - ValidationError
   exclude-operation-ids:
     - getFirewallAdvancedSettingsEndpoint
     - patchFirewallAdvancedSettingsEndpoint
@@ -40,12 +54,12 @@ output-options:
     - putFirewallNATPortForwardsEndpoint
     - deleteFirewallNATPortForwardsEndpoint
     # - getFirewallRuleEndpoint
-    - postFirewallRuleEndpoint
-    - patchFirewallRuleEndpoint
-    - deleteFirewallRuleEndpoint
-    - getFirewallRulesEndpoint
-    - putFirewallRulesEndpoint
-    - deleteFirewallRulesEndpoint
+    # - postFirewallRuleEndpoint
+    # - patchFirewallRuleEndpoint
+    # - deleteFirewallRuleEndpoint
+    # - getFirewallRulesEndpoint
+    # - putFirewallRulesEndpoint
+    # - deleteFirewallRulesEndpoint
     - getFirewallScheduleEndpoint
     - postFirewallScheduleEndpoint
     - patchFirewallScheduleEndpoint
